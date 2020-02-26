@@ -1,4 +1,4 @@
-import 'right_menu_item_model.dart';
+import 'package:ecommers/ui/widgets/right_menu_bar/models/index.dart';
 
 class SubTitleModel extends RightMenuItemModel{
   final String subTitle;

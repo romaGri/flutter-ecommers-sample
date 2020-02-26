@@ -1,13 +1,14 @@
+import 'package:ecommers/ui/widgets/right_menu_bar/index.dart';
+import 'package:ecommers/ui/widgets/right_menu_bar/models/index.dart';
 import 'package:flutter/widgets.dart';
 
-import 'models/right_menu_item_model.dart';
-import 'right_menu_item.dart';
 
+@immutable
 class RightMenuItemsList extends StatelessWidget {
   final List<RightMenuItemModel> itemList;
   final double itemHeight;
 
-  RightMenuItemsList({
+  const RightMenuItemsList({
     this.itemList,
     this.itemHeight = 50.0, 
   });
@@ -16,11 +17,11 @@ class RightMenuItemsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
-      padding: EdgeInsets.all(0),
+      padding: const EdgeInsets.all(0),
       physics: const NeverScrollableScrollPhysics(),
       itemCount: itemList.length,
       itemBuilder: (context, index) {
-        var itemModel = itemList[index];
+        final itemModel = itemList[index];
         return RightMenuItem(
           itemModel: itemModel,
           height: itemHeight,

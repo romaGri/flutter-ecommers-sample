@@ -1,15 +1,12 @@
+import 'package:ecommers/ui/widgets/right_menu_bar/index.dart';
+import 'package:ecommers/ui/widgets/right_menu_bar/models/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ecommers/generated/i18n.dart';
 import 'package:ecommers/ui/decorations/index.dart';
 import 'package:ecommers/ui/decorations/dimens/index.dart';
+import 'package:ecommers/ui/widgets/button/index.dart';
 
-import '../button/index.dart';
-import 'models/colors_model.dart';
-import 'models/price_model.dart';
-import 'models/right_menu_item_model.dart';
-import 'models/subtitle_model.dart';
-import 'right_menu_items_list.dart';
 
 class RightMenuWidget extends StatelessWidget{
  final List<RightMenuItemModel> filterMenuList = [
@@ -52,6 +49,7 @@ class RightMenuWidget extends StatelessWidget{
   ];
 
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       endDrawer: Container(
@@ -88,6 +86,7 @@ class RightMenuWidget extends StatelessWidget{
                 ),
                 RightMenuItemsList(
                   itemList: filterMenuList,
+                  
                 ),
                 const SizedBox(height: 87.0),
                 Align(

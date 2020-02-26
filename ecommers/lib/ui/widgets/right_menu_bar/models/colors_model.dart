@@ -1,5 +1,5 @@
+import 'package:ecommers/ui/widgets/right_menu_bar/models/index.dart';
 
-import 'right_menu_item_model.dart';
 
 class ColorsModel extends RightMenuItemModel {
   final List<String> colors;

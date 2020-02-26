@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
 
   Widget _buildLatestGridView(BuildContext context) {
     return SliverPadding(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: Dimens.pagePadding,
         vertical: Insets.x2_5,
       ),
