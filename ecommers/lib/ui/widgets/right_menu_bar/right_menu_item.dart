@@ -11,35 +11,29 @@ import 'models/subtitle_model.dart';
 
 @immutable
 class RightMenuItem extends StatelessWidget {
-
   final RightMenuItemModel itemModel;
-  final double height;
 
-  const RightMenuItem({this.itemModel, this.height});
+  const RightMenuItem({this.itemModel});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      
-        height: height,
-        child: Row(
-          children: <Widget>[
-            const SizedBox(width: Insets.x6),
-            Expanded(
-              child: Text(
-                itemModel.title,
-                style: Theme.of(context).textTheme.subtitle1,
-              ),
+      height: 50,
+      child: Row(
+        children: <Widget>[
+          const SizedBox(width: Insets.x6),
+          Expanded(
+            child: Text(
+              itemModel.title,
+              style: Theme.of(context).textTheme.subtitle1,
             ),
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Container(child: _subTitleWidget(context, itemModel)),
-            ),
-            const SizedBox(width: Insets.x2_5),
-            SvgPicture.asset(Assets.menuArrowIcon),
-            const SizedBox(width: Insets.x4),
-          ],
-        ),
+          ),
+          Container(child: _subTitleWidget(context, itemModel)),
+          const SizedBox(width: Insets.x2_5),
+          SvgPicture.asset(Assets.menuArrowIcon),
+          const SizedBox(width: Insets.x4),
+        ],
+      ),
     );
   }
 }
@@ -86,7 +80,7 @@ Widget circleBuilder(String color, int index) {
     Container(
         width: Insets.x5,
         height: Insets.x5,
-        margin:EdgeInsets.only(left: Insets.x2_5 * index),
+        margin: EdgeInsets.only(left: Insets.x2_5 * index),
         decoration: BoxDecoration(
           color: fromHex(color),
           shape: BoxShape.circle,
@@ -94,13 +88,9 @@ Widget circleBuilder(String color, int index) {
   ]);
 }
 
- Color fromHex(String hexString) {
-    final buffer = StringBuffer();
-    if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
-    buffer.write(hexString.replaceFirst('#', ''));
-    return Color(int.parse(buffer.toString(), radix: 16));
-  }
-
-
-
-
+Color fromHex(String hexString) {
+  final buffer = StringBuffer();
+  if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
+  buffer.write(hexString.replaceFirst('#', ''));
+  return Color(int.parse(buffer.toString(), radix: 16));
+}

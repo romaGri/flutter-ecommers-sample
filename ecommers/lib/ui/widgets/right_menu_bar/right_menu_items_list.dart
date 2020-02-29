@@ -6,11 +6,9 @@ import 'package:flutter/widgets.dart';
 @immutable
 class RightMenuItemsList extends StatelessWidget {
   final List<RightMenuItemModel> itemList;
-  final double itemHeight;
 
   const RightMenuItemsList({
-    this.itemList,
-    this.itemHeight = 50.0, 
+    this.itemList
   });
 
   @override
@@ -24,7 +22,6 @@ class RightMenuItemsList extends StatelessWidget {
         final itemModel = itemList[index];
         return RightMenuItem(
           itemModel: itemModel,
-          height: itemHeight,
         );
       },
     );
