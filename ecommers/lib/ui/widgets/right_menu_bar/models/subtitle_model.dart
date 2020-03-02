@@ -5,12 +5,7 @@ import 'package:flutter/widgets.dart';
 class SubTitleModel extends RightMenuItemModel {
   final String subTitle;
 
-  SubTitleModel({String title, this.subTitle})
-      : super(
-          title: title,
-        );
-
-  @override
+  SubTitleModel({String title, this.subTitle}) : super(title: title);
   Widget create() {
     return Text(subTitle);
   }
