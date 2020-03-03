@@ -1,3 +1,4 @@
+import 'package:ecommers/ui/widgets/right_menu_bar/subtitle_factory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
@@ -37,7 +38,8 @@ class RightMenuItem extends StatelessWidget {
 
 @override
 Widget _subTitleWidget(BuildContext context, RightMenuItemModel itemModel) {
-  return itemModel.create();
+  final subTitleFactory = SubTitleFactory();
+  return subTitleFactory.create(itemModel);
 }
 
 

@@ -12,7 +12,7 @@ class RightMenuWidget extends StatelessWidget{
  final List<RightMenuItemModel> filterMenuList = [
     SubTitleModel(
       title: 'View',
-      subTitle: 'Thubanails'),
+      subTitle: 'Thumbnails'),
 
     SubTitleModel(
       title: 'Category',
@@ -24,7 +24,7 @@ class RightMenuWidget extends StatelessWidget{
     ),
 
     SubTitleModel(
-      title: 'Mterial',
+      title: 'Material',
       subTitle: 'Cotton',
     ),
     
