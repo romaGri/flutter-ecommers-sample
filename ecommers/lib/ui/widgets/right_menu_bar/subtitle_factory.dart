@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:ecommers/extensions/string_extension.dart';
 import 'package:ecommers/ui/decorations/dimens/index.dart';
 
-
 class SubTitleFactory {
   Widget create(RightMenuItemModel model) {
     final modelItem = model.runtimeType;
@@ -25,11 +24,21 @@ class SubTitleFactory {
 }
 
 Widget createSubTitle(SubTitleModel subTitleModel) {
-  return Text(subTitleModel.subTitle);
+  return Opacity(
+    opacity: 0.5,
+    child: Text(
+      subTitleModel.subTitle,
+    ),
+  );
 }
 
 Widget createPrice(PriceModel priceModel) {
-  return Text('\$${priceModel.minPrice} - \$${priceModel.maxPrice}');
+  return Opacity(
+    opacity: 0.5,
+    child: Text(
+      '\$${priceModel.minPrice} - \$${priceModel.maxPrice}',
+    ),
+  );
 }
 
 Widget createCircles(List<String> colors) {
