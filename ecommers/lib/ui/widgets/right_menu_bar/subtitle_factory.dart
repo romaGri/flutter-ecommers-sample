@@ -17,6 +17,23 @@ class SubTitleFactory {
       final listColors = model;
       return createCircles(listColors.colors);
     }
+    // final modelItem = model.runtimeType;
+    // switch (modelItem) {
+    //   case SubTitleModel:
+    //     final modelType = modelItem as SubTitleModel;
+    //     return createSubTitle(modelType);
+    //     break;
+    //     case PriceModel:
+    //     final modelType = modelItem as PriceModel;
+    //     return createPrice(modelType);
+    //     break;
+    //     case ColorsModel:
+    //     final modelType = modelItem as ColorsModel;
+    //     return createCircles(modelType.colors);
+    //     break;
+    //   default:
+    //     return const Text('');
+    // }
   }
 }
 
@@ -31,7 +48,8 @@ Widget createPrice(PriceModel priceModel) {
 Widget createCircles(List<String> colors) {
   return Stack(
       children: colors
-          .map((color) => circleBuilder(color, (colors.length - colors.indexOf(color))))
+          .map((color) =>
+              circleBuilder(color, colors.length - colors.indexOf(color)))
           .toList());
 }
 
