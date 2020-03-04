@@ -1,39 +1,26 @@
 import 'package:ecommers/ui/widgets/right_menu_bar/models/index.dart';
 import 'package:flutter/material.dart';
+import 'package:ecommers/extensions/string_extension.dart';
+import 'package:ecommers/ui/decorations/dimens/index.dart';
 
-import '../../decorations/dimens/index.dart';
 
 class SubTitleFactory {
   Widget create(RightMenuItemModel model) {
-    if (model is SubTitleModel) {
-      return createSubTitle(model);
+    final modelItem = model.runtimeType;
+    switch (modelItem) {
+      case SubTitleModel:
+        return createSubTitle(model as SubTitleModel);
+        break;
+      case PriceModel:
+        return createPrice(model as PriceModel);
+        break;
+      case ColorsModel:
+        final modelType = model as ColorsModel;
+        return createCircles(modelType.colors);
+        break;
+      default:
+        return const Text('');
     }
-
-    if (model is PriceModel) {
-      return createPrice(model);
-    }
-
-    if (model is ColorsModel) {
-      final listColors = model;
-      return createCircles(listColors.colors);
-    }
-    // final modelItem = model.runtimeType;
-    // switch (modelItem) {
-    //   case SubTitleModel:
-    //     final modelType = modelItem as SubTitleModel;
-    //     return createSubTitle(modelType);
-    //     break;
-    //     case PriceModel:
-    //     final modelType = modelItem as PriceModel;
-    //     return createPrice(modelType);
-    //     break;
-    //     case ColorsModel:
-    //     final modelType = modelItem as ColorsModel;
-    //     return createCircles(modelType.colors);
-    //     break;
-    //   default:
-    //     return const Text('');
-    // }
   }
 }
 
@@ -47,26 +34,21 @@ Widget createPrice(PriceModel priceModel) {
 
 Widget createCircles(List<String> colors) {
   return Stack(
-      children: colors
-          .map((color) =>
-              circleBuilder(color, colors.length - colors.indexOf(color)))
-          .toList());
+    children: colors
+        .map((color) =>
+            circleBuilder(color, colors.length - colors.indexOf(color)))
+        .toList(),
+  );
 }
 
 Widget circleBuilder(String color, int index) {
   return Container(
-      width: Insets.x5,
-      height: Insets.x5,
-      margin: EdgeInsets.only(left: Insets.x2_5 * index),
-      decoration: BoxDecoration(
-        color: fromHex(color),
-        shape: BoxShape.circle,
-      ));
-}
-
-Color fromHex(String hexString) {
-  final buffer = StringBuffer();
-  if (hexString.length == 6 || hexString.length == 7) buffer.write('ff');
-  buffer.write(hexString.replaceFirst('#', ''));
-  return Color(int.parse(buffer.toString(), radix: 16));
+    width: Insets.x5,
+    height: Insets.x5,
+    margin: EdgeInsets.only(left: Insets.x3 * index),
+    decoration: BoxDecoration(
+      color: color.fromHex(),
+      shape: BoxShape.circle,
+    ),
+  );
 }

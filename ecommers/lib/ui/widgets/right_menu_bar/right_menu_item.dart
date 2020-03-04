@@ -19,7 +19,6 @@ class RightMenuItem extends StatelessWidget {
       height: 50,
       child: Row(
         children: <Widget>[
-          const SizedBox(width: Insets.x6),
           Expanded(
             child: Text(
               itemModel.title,
@@ -29,7 +28,6 @@ class RightMenuItem extends StatelessWidget {
           Container(child: _subTitleWidget(context, itemModel)),
           const SizedBox(width: Insets.x2_5),
           SvgPicture.asset(Assets.menuArrowIcon),
-          const SizedBox(width: Insets.x4),
         ],
       ),
     );

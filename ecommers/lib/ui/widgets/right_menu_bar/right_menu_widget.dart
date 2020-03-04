@@ -49,6 +49,7 @@ class RightMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       drawerScrimColor: Colors.transparent,
       endDrawer: Container(
         width: 270,
@@ -62,46 +63,59 @@ class RightMenuWidget extends StatelessWidget {
             ),
             child: Container(
               color: BrandingColors.background,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      const SizedBox(width: Insets.x5),
-                      Text(
-                        I18n.of(context).refineResults,
-                        style: Theme.of(context).textTheme.subtitle1.copyWith(
-                              fontWeight: FontWeight.w300,
-                              fontSize: FontSizes.small_3x,
-                            ),
-                      ),
-                      const Spacer(),
-                      FlatButton(
-                        onPressed: () {},
-                        child: Text(
-                          I18n.of(context).clear,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          I18n.of(context).refineResults,
                           style: Theme.of(context).textTheme.subtitle1.copyWith(
-                              fontSize: FontSizes.small_3x,
-                              color: BrandingColors.primary),
+                                fontWeight: FontWeight.w300,
+                                fontSize: FontSizes.small_3x,
+                              ),
                         ),
-                      )
-                    ],
-                  ),
-                  RightMenuItemsList(
-                    itemList: filterMenuList,
-                  ),
-                  const SizedBox(height: 87.0),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: SizedBox(
-                      height: 47.0,
-                      width: 230.0,
-                      child: PrimaryButtonWidget(
-                          text: I18n.of(context).applyFilters,
-                          onPressedFunction: () {}),
+                        const Spacer(),
+                        Container(
+                          width: 45,
+                          child: FlatButton(
+                            padding: const EdgeInsets.all(1),
+                            materialTapTargetSize:
+                                MaterialTapTargetSize.shrinkWrap,
+                            onPressed: () {},
+                            child: Text(
+                              I18n.of(context).clear,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .subtitle1
+                                  .copyWith(
+                                      fontSize: FontSizes.small_3x,
+                                      color: BrandingColors.primary),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
+                    RightMenuItemsList(
+                      itemList: filterMenuList,
+                    ),
+                    const SizedBox(height: 10.0),
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: SizedBox(
+                          height: 47.0,
+                          width: 230.0,
+                          child: PrimaryButtonWidget(
+                              text: I18n.of(context).applyFilters,
+                              onPressedFunction: () {}),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
