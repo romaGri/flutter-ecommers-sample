@@ -12,11 +12,12 @@ class RightMenuItem extends StatelessWidget {
   final RightMenuItemModel itemModel;
 
   const RightMenuItem({this.itemModel});
+  static const double _height = 50.0;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
+      height: _height,
       child: Row(
         children: <Widget>[
           Expanded(
@@ -25,7 +26,7 @@ class RightMenuItem extends StatelessWidget {
               style: Theme.of(context).textTheme.subtitle1,
             ),
           ),
-          Container(child: _subTitleWidget(context, itemModel)),
+          Container(child: _subTitleWidget(itemModel)),
           const SizedBox(width: Insets.x2_5),
           SvgPicture.asset(Assets.menuArrowIcon),
         ],
@@ -35,9 +36,8 @@ class RightMenuItem extends StatelessWidget {
 }
 
 @override
-Widget _subTitleWidget(BuildContext context, RightMenuItemModel itemModel) {
-  final subTitleFactory = SubTitleFactory();
-  return subTitleFactory.create(itemModel);
+Widget _subTitleWidget(RightMenuItemModel model) {
+  return RightMenuSubTitle(model: model);
 }
 
 

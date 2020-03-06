@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:ecommers/ui/widgets/right_menu_bar/index.dart';
 import 'package:ecommers/ui/widgets/right_menu_bar/models/index.dart';
 import 'package:flutter/material.dart';
@@ -69,17 +68,17 @@ class RightMenuWidget extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         I18n.of(context).refineResults,
-                        style: Theme.of(context).textTheme.subtitle1.copyWith(
-                              fontWeight: FontWeight.w300,
+                        style: Theme.of(context).textTheme.headline5.copyWith(
                               fontSize: FontSizes.small_3x,
+                              color: Colors.transparent.withOpacity(0.3),
                             ),
                       ),
                       const Spacer(),
-                      GestureDetector(
-                        onTap: () => {},
+                      InkWell(
+                        onTap: () => {}, //TODO: handle click
                         child: Text(
                           I18n.of(context).clear,
-                          style: Theme.of(context).textTheme.subtitle1.copyWith(
+                          style: Theme.of(context).textTheme.headline5.copyWith(
                               fontSize: FontSizes.small_3x,
                               color: BrandingColors.primary),
                         ),
@@ -99,7 +98,7 @@ class RightMenuWidget extends StatelessWidget {
                         width: 230.0,
                         child: PrimaryButtonWidget(
                           text: I18n.of(context).applyFilters,
-                          onPressedFunction: () {},
+                          onPressedFunction: () => {}, //TODO:  handle click
                         ),
                       ),
                     ),
