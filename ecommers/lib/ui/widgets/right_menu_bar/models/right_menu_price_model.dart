@@ -1,9 +1,9 @@
 import 'package:ecommers/ui/widgets/right_menu_bar/models/index.dart';
 
-class PriceModel extends RightMenuItemModel {
+class RigthMenuPriceModel extends RightMenuItemModel {
   final String minPrice;
   final String maxPrice;
 
-  PriceModel({String title, this.minPrice, this.maxPrice})
+  RigthMenuPriceModel({String title, this.minPrice, this.maxPrice})
       : super(title: title);
 }

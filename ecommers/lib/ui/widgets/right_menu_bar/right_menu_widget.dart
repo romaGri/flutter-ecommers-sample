@@ -10,35 +10,35 @@ import 'package:ecommers/ui/widgets/button/index.dart';
 
 class RightMenuWidget extends StatelessWidget {
   final List<RightMenuItemModel> filterMenuList = [
-    SubTitleModel(
+    RightMenuSubTitleModel(
       title: 'View',
       subTitle: 'Thumbnails',
     ),
-    SubTitleModel(
+    RightMenuSubTitleModel(
       title: 'Category',
       subTitle: 'Men\'s Apparel',
     ),
-    SubTitleModel(
+    RightMenuSubTitleModel(
       title: 'Condition',
       subTitle: 'Brand New',
     ),
-    SubTitleModel(
+    RightMenuSubTitleModel(
       title: 'Material',
       subTitle: 'Cotton',
     ),
-    ColorsModel(
+    RightMenuColorsModel(
       title: 'Colour',
       colors: ['#77CBFF', '#FF77E5', '#C5DC1B'],
     ),
-    SubTitleModel(
+    RightMenuSubTitleModel(
       title: 'Brand',
       subTitle: 'All Brands',
     ),
-    SubTitleModel(
+    RightMenuSubTitleModel(
       title: 'Size',
       subTitle: 'Large',
     ),
-    PriceModel(
+    RigthMenuPriceModel(
       title: 'Price Range',
       minPrice: '0',
       maxPrice: '30',

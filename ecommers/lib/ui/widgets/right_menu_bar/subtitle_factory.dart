@@ -13,14 +13,14 @@ class RightMenuSubTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     final modelItem = model.runtimeType;
     switch (modelItem) {
-      case SubTitleModel:
-        return createSubTitle(context, model as SubTitleModel);
+      case RightMenuSubTitleModel:
+        return createSubTitle(context, model as RightMenuSubTitleModel);
         break;
-      case PriceModel:
-        return createPrice(context, model as PriceModel);
+      case RigthMenuPriceModel:
+        return createPrice(context, model as RigthMenuPriceModel);
         break;
-      case ColorsModel:
-        final modelType = model as ColorsModel;
+      case RightMenuColorsModel:
+        final modelType = model as RightMenuColorsModel;
         return createCircles(modelType.colors);
         break;
       default:
@@ -28,7 +28,7 @@ class RightMenuSubTitle extends StatelessWidget {
     }
   }
 
-  Widget createSubTitle(BuildContext context, SubTitleModel subTitleModel) {
+  Widget createSubTitle(BuildContext context, RightMenuSubTitleModel subTitleModel) {
     return Text(
       subTitleModel.subTitle,
       style: Theme.of(context).textTheme.subtitle1.copyWith(
@@ -37,7 +37,7 @@ class RightMenuSubTitle extends StatelessWidget {
     );
   }
 
-  Widget createPrice(BuildContext context, PriceModel priceModel) {
+  Widget createPrice(BuildContext context, RigthMenuPriceModel priceModel) {
     return Text(
       '\$${priceModel.minPrice} - \$${priceModel.maxPrice}',
       style: Theme.of(context).textTheme.subtitle1.copyWith(
